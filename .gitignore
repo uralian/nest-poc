@@ -1,2 +1,10 @@
-*.class
-*.log
+logs
+target
+local.*
+/.key
+/.idea
+/.idea_modules
+/.classpath
+/.project
+/.settings
+/RUNNING_PID
