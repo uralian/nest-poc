@@ -1,2 +1,2 @@
-# nest_poc
+# nest-poc
 POC for Nest thermostats
