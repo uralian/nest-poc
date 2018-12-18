@@ -1,0 +1,344 @@
+{
+  "devices": {
+    "thermostats": {
+      "Gp_Mnef0pHHZno317X9NiVHG0PjbkGTo": {
+        "humidity": 50,
+        "locale": "en-US",
+        "temperature_scale": "F",
+        "is_using_emergency_heat": false,
+        "has_fan": true,
+        "software_version": "5.6.1",
+        "has_leaf": true,
+        "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyRq5RNksxcXg",
+        "device_id": "Gp_Mnef0pHHZno317X9NiVHG0PjbkGTo",
+        "name": "Living Room (114B)",
+        "can_heat": true,
+        "can_cool": true,
+        "target_temperature_c": 20,
+        "target_temperature_f": 68,
+        "target_temperature_high_c": 26,
+        "target_temperature_high_f": 79,
+        "target_temperature_low_c": 19,
+        "target_temperature_low_f": 66,
+        "ambient_temperature_c": 21,
+        "ambient_temperature_f": 70,
+        "away_temperature_high_c": 24,
+        "away_temperature_high_f": 76,
+        "away_temperature_low_c": 12.5,
+        "away_temperature_low_f": 55,
+        "eco_temperature_high_c": 24,
+        "eco_temperature_high_f": 76,
+        "eco_temperature_low_c": 12.5,
+        "eco_temperature_low_f": 55,
+        "is_locked": false,
+        "locked_temp_min_c": 20,
+        "locked_temp_min_f": 68,
+        "locked_temp_max_c": 22,
+        "locked_temp_max_f": 72,
+        "sunlight_correction_active": false,
+        "sunlight_correction_enabled": true,
+        "structure_id": "4bI0rz4GwpcqkLvf9tf821t3cAvm22Qpexlpj0igWD0AfRDVV-ldDg",
+        "fan_timer_active": false,
+        "fan_timer_timeout": "1970-01-01T00:00:00.000Z",
+        "fan_timer_duration": 15,
+        "previous_hvac_mode": "",
+        "hvac_mode": "heat",
+        "time_to_target": "~0",
+        "time_to_target_training": "ready",
+        "where_name": "Living Room",
+        "label": "114B",
+        "name_long": "Living Room Thermostat (114B)",
+        "is_online": true,
+        "hvac_state": "off"
+      },
+      "Gp_Mnef0pHGEHI_ylxz0LFHG0PjbkGTo": {
+        "humidity": 50,
+        "locale": "en-US",
+        "temperature_scale": "F",
+        "is_using_emergency_heat": false,
+        "has_fan": true,
+        "software_version": "5.6.1",
+        "has_leaf": true,
+        "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SxEI_X6fnhtQQ",
+        "device_id": "Gp_Mnef0pHGEHI_ylxz0LFHG0PjbkGTo",
+        "name": "Basement (57AE)",
+        "can_heat": true,
+        "can_cool": true,
+        "target_temperature_c": 20,
+        "target_temperature_f": 68,
+        "target_temperature_high_c": 26,
+        "target_temperature_high_f": 79,
+        "target_temperature_low_c": 19,
+        "target_temperature_low_f": 66,
+        "ambient_temperature_c": 21,
+        "ambient_temperature_f": 70,
+        "away_temperature_high_c": 24,
+        "away_temperature_high_f": 76,
+        "away_temperature_low_c": 12.5,
+        "away_temperature_low_f": 55,
+        "eco_temperature_high_c": 24,
+        "eco_temperature_high_f": 76,
+        "eco_temperature_low_c": 12.5,
+        "eco_temperature_low_f": 55,
+        "is_locked": false,
+        "locked_temp_min_c": 20,
+        "locked_temp_min_f": 68,
+        "locked_temp_max_c": 22,
+        "locked_temp_max_f": 72,
+        "sunlight_correction_active": false,
+        "sunlight_correction_enabled": true,
+        "structure_id": "4bI0rz4GwpcqkLvf9tf821t3cAvm22Qpexlpj0igWD0AfRDVV-ldDg",
+        "fan_timer_active": false,
+        "fan_timer_timeout": "1970-01-01T00:00:00.000Z",
+        "fan_timer_duration": 15,
+        "previous_hvac_mode": "",
+        "hvac_mode": "heat",
+        "time_to_target": "~0",
+        "time_to_target_training": "ready",
+        "where_name": "Basement",
+        "label": "57AE",
+        "name_long": "Basement Thermostat (57AE)",
+        "is_online": true,
+        "hvac_state": "off"
+      },
+      "Gp_Mnef0pHHq_euH-ZjsbFHG0PjbkGTo": {
+        "humidity": 50,
+        "locale": "en-US",
+        "temperature_scale": "F",
+        "is_using_emergency_heat": false,
+        "has_fan": true,
+        "software_version": "5.6.1",
+        "has_leaf": true,
+        "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyOAsImm-94Xg",
+        "device_id": "Gp_Mnef0pHHq_euH-ZjsbFHG0PjbkGTo",
+        "name": "Bedroom (6044)",
+        "can_heat": true,
+        "can_cool": true,
+        "target_temperature_c": 20,
+        "target_temperature_f": 68,
+        "target_temperature_high_c": 26,
+        "target_temperature_high_f": 79,
+        "target_temperature_low_c": 19,
+        "target_temperature_low_f": 66,
+        "ambient_temperature_c": 21,
+        "ambient_temperature_f": 70,
+        "away_temperature_high_c": 24,
+        "away_temperature_high_f": 76,
+        "away_temperature_low_c": 12.5,
+        "away_temperature_low_f": 55,
+        "eco_temperature_high_c": 24,
+        "eco_temperature_high_f": 76,
+        "eco_temperature_low_c": 12.5,
+        "eco_temperature_low_f": 55,
+        "is_locked": false,
+        "locked_temp_min_c": 20,
+        "locked_temp_min_f": 68,
+        "locked_temp_max_c": 22,
+        "locked_temp_max_f": 72,
+        "sunlight_correction_active": false,
+        "sunlight_correction_enabled": true,
+        "structure_id": "4bI0rz4GwpcqkLvf9tf821t3cAvm22Qpexlpj0igWD0AfRDVV-ldDg",
+        "fan_timer_active": false,
+        "fan_timer_timeout": "1970-01-01T00:00:00.000Z",
+        "fan_timer_duration": 15,
+        "previous_hvac_mode": "",
+        "hvac_mode": "heat",
+        "time_to_target": "~0",
+        "time_to_target_training": "ready",
+        "where_name": "Bedroom",
+        "label": "6044",
+        "name_long": "Bedroom Thermostat (6044)",
+        "is_online": true,
+        "hvac_state": "off"
+      },
+      "Gp_Mnef0pHEVeS8ShlWAc1HG0PjbkGTo": {
+        "humidity": 50,
+        "locale": "en-US",
+        "temperature_scale": "F",
+        "is_using_emergency_heat": false,
+        "has_fan": true,
+        "software_version": "5.6.1",
+        "has_leaf": true,
+        "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SwD2fkFCnicqg",
+        "device_id": "Gp_Mnef0pHEVeS8ShlWAc1HG0PjbkGTo",
+        "name": "Office (1F76)",
+        "can_heat": true,
+        "can_cool": true,
+        "target_temperature_c": 20,
+        "target_temperature_f": 68,
+        "target_temperature_high_c": 26,
+        "target_temperature_high_f": 79,
+        "target_temperature_low_c": 19,
+        "target_temperature_low_f": 66,
+        "ambient_temperature_c": 21,
+        "ambient_temperature_f": 70,
+        "away_temperature_high_c": 24,
+        "away_temperature_high_f": 76,
+        "away_temperature_low_c": 12.5,
+        "away_temperature_low_f": 55,
+        "eco_temperature_high_c": 24,
+        "eco_temperature_high_f": 76,
+        "eco_temperature_low_c": 12.5,
+        "eco_temperature_low_f": 55,
+        "is_locked": false,
+        "locked_temp_min_c": 20,
+        "locked_temp_min_f": 68,
+        "locked_temp_max_c": 22,
+        "locked_temp_max_f": 72,
+        "sunlight_correction_active": false,
+        "sunlight_correction_enabled": true,
+        "structure_id": "4bI0rz4GwpcqkLvf9tf821t3cAvm22Qpexlpj0igWD0AfRDVV-ldDg",
+        "fan_timer_active": false,
+        "fan_timer_timeout": "1970-01-01T00:00:00.000Z",
+        "fan_timer_duration": 15,
+        "previous_hvac_mode": "",
+        "hvac_mode": "heat",
+        "time_to_target": "~0",
+        "time_to_target_training": "ready",
+        "where_name": "Office",
+        "label": "1F76",
+        "name_long": "Office Thermostat (1F76)",
+        "is_online": true,
+        "hvac_state": "off"
+      }
+    }
+  },
+  "structures": {
+    "4bI0rz4GwpcqkLvf9tf821t3cAvm22Qpexlpj0igWD0AfRDVV-ldDg": {
+      "name": "Headquarters",
+      "country_code": "US",
+      "time_zone": "America/New_York",
+      "away": "home",
+      "thermostats": [
+        "Gp_Mnef0pHHq_euH-ZjsbFHG0PjbkGTo",
+        "Gp_Mnef0pHGEHI_ylxz0LFHG0PjbkGTo",
+        "Gp_Mnef0pHHZno317X9NiVHG0PjbkGTo",
+        "Gp_Mnef0pHEVeS8ShlWAc1HG0PjbkGTo"
+      ],
+      "structure_id": "4bI0rz4GwpcqkLvf9tf821t3cAvm22Qpexlpj0igWD0AfRDVV-ldDg",
+      "wheres": {
+        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Sz2jj2oli-XjQ": {
+          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Sz2jj2oli-XjQ",
+          "name": "Attic"
+        },
+        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SxSrNFP0Vi_AQ": {
+          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SxSrNFP0Vi_AQ",
+          "name": "Back Door"
+        },
+        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SwSJlfpaQgs7w": {
+          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SwSJlfpaQgs7w",
+          "name": "Backyard"
+        },
+        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SxEI_X6fnhtQQ": {
+          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SxEI_X6fnhtQQ",
+          "name": "Basement"
+        },
+        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SwE1vDdY1NU8g": {
+          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SwE1vDdY1NU8g",
+          "name": "Bathroom"
+        },
+        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyOAsImm-94Xg": {
+          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyOAsImm-94Xg",
+          "name": "Bedroom"
+        },
+        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SxtbIqUKq8KTA": {
+          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SxtbIqUKq8KTA",
+          "name": "Deck"
+        },
+        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Szr_fMi94Bwjw": {
+          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Szr_fMi94Bwjw",
+          "name": "Den"
+        },
+        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SzIhpUoozn-hw": {
+          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SzIhpUoozn-hw",
+          "name": "Dining Room"
+        },
+        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SzzigzHxmXHRA": {
+          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SzzigzHxmXHRA",
+          "name": "Downstairs"
+        },
+        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyXUiai5-msDQ": {
+          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyXUiai5-msDQ",
+          "name": "Driveway"
+        },
+        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SzQmdHoqfPVMw": {
+          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SzQmdHoqfPVMw",
+          "name": "Entryway"
+        },
+        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SxU7nWo3AKH4Q": {
+          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SxU7nWo3AKH4Q",
+          "name": "Family Room"
+        },
+        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SwLngiMnbwlUg": {
+          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SwLngiMnbwlUg",
+          "name": "Front Door"
+        },
+        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Sxc2IOyzaeNcA": {
+          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Sxc2IOyzaeNcA",
+          "name": "Front Yard"
+        },
+        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Szvu7J0NTcgAw": {
+          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Szvu7J0NTcgAw",
+          "name": "Garage"
+        },
+        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Szkd2bwaaGPzA": {
+          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Szkd2bwaaGPzA",
+          "name": "Guest House"
+        },
+        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyMAONh-5eing": {
+          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyMAONh-5eing",
+          "name": "Guest Room"
+        },
+        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyEundrCazZjA": {
+          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyEundrCazZjA",
+          "name": "Hallway"
+        },
+        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyC4cxMzF26Tg": {
+          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyC4cxMzF26Tg",
+          "name": "Kids Room"
+        },
+        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyKQ8lXExboSw": {
+          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyKQ8lXExboSw",
+          "name": "Kitchen"
+        },
+        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyRq5RNksxcXg": {
+          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyRq5RNksxcXg",
+          "name": "Living Room"
+        },
+        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyxLwkA-3JUzA": {
+          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyxLwkA-3JUzA",
+          "name": "Master Bedroom"
+        },
+        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SwD2fkFCnicqg": {
+          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SwD2fkFCnicqg",
+          "name": "Office"
+        },
+        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Sy0GhrTfb_VOw": {
+          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Sy0GhrTfb_VOw",
+          "name": "Outside"
+        },
+        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Sxdi4i5Tb6tMg": {
+          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Sxdi4i5Tb6tMg",
+          "name": "Patio"
+        },
+        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Sx8zYxBWbsu_g": {
+          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Sx8zYxBWbsu_g",
+          "name": "Shed"
+        },
+        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SzgmJYWriG0Ag": {
+          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SzgmJYWriG0Ag",
+          "name": "Side Door"
+        },
+        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Sza7xqn7BUFiA": {
+          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Sza7xqn7BUFiA",
+          "name": "Upstairs"
+        }
+      }
+    }
+  },
+  "metadata": {
+    "access_token": "c.3fb4eNA2uvqCG0CwyLVJmYw17YgVfmoaq6pOEZUI6mjJMO8WZZbe7CD6nRUSWQOLyVFvbB6VHxxZbmRT9qGdEnukvzF5jkbvbKOJisZKX4gqQTOgtMN9cTigmMag4bnIykowxiUVWFHRZ6Fp",
+    "client_version": 1,
+    "user_id": "z.1.1.ajVtWTdGjfxH3zys4T7QS44SUvrguChdLWwx+8f1fW8="
+  }
+}
