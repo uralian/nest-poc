@@ -27,12 +27,16 @@ lazy val nest_dslink = (project in file("dslink-scala-nest"))
   .settings(Defaults.itSettings: _*)
   .settings(
     libraryDependencies ++= commonDependencies ++ testDependencies ++ itDependencies ++ Seq(
+      "com.softwaremill.sttp" %% "core" % "1.5.1",
+      "com.softwaremill.sttp" %% "json4s" % "1.5.1",
+      "com.softwaremill.sttp" %% "akka-http-backend" % "1.5.1",
+      "com.typesafe.akka" %% "akka-stream" % "2.5.11",
+      "org.json4s" %% "json4s-native" % "3.6.2",
       "com.uralian" %% "sdk-dslink-scala" % "0.6.1"
     )
   )
 
 lazy val commonDependencies = Seq(
-  "org.scalactic"         %% "scalactic"           % "3.0.5"
 )
 
 lazy val testDependencies = Seq(
