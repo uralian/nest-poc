@@ -13,9 +13,25 @@ class NestHttpServiceSpec extends AbstractITSpec {
 
   val service = new NestHttpService(client)
 
+  var deviceId: String = _
+
   "getAllThermostats" should {
     "retrieve all thermostats" in {
-      whenReady(service.getAllThermostats) { tstats => tstats must not be empty }
+      whenReady(service.getAllThermostats) { pcts =>
+        pcts must not be empty
+        deviceId = pcts.head._1
+      }
+    }
+  }
+
+  "getThermostat" should {
+    "retrieve a thermostat by id" in {
+      whenReady(service.getThermostat(deviceId)) { pct =>
+        pct.deviceId mustBe deviceId
+      }
+    }
+    "return None for invalid id" in {
+      service.getThermostat("??????????????????").failed.futureValue mustBe an[IllegalArgumentException]
     }
   }
 }
