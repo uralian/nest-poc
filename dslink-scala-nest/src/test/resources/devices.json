@@ -217,121 +217,21 @@
       ],
       "structure_id": "4bI0rz4GwpcqkLvf9tf821t3cAvm22Qpexlpj0igWD0AfRDVV-ldDg",
       "wheres": {
-        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Sz2jj2oli-XjQ": {
-          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Sz2jj2oli-XjQ",
-          "name": "Attic"
-        },
-        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SxSrNFP0Vi_AQ": {
-          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SxSrNFP0Vi_AQ",
-          "name": "Back Door"
-        },
-        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SwSJlfpaQgs7w": {
-          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SwSJlfpaQgs7w",
-          "name": "Backyard"
-        },
         "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SxEI_X6fnhtQQ": {
           "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SxEI_X6fnhtQQ",
           "name": "Basement"
-        },
-        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SwE1vDdY1NU8g": {
-          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SwE1vDdY1NU8g",
-          "name": "Bathroom"
         },
         "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyOAsImm-94Xg": {
           "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyOAsImm-94Xg",
           "name": "Bedroom"
         },
-        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SxtbIqUKq8KTA": {
-          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SxtbIqUKq8KTA",
-          "name": "Deck"
-        },
-        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Szr_fMi94Bwjw": {
-          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Szr_fMi94Bwjw",
-          "name": "Den"
-        },
-        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SzIhpUoozn-hw": {
-          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SzIhpUoozn-hw",
-          "name": "Dining Room"
-        },
-        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SzzigzHxmXHRA": {
-          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SzzigzHxmXHRA",
-          "name": "Downstairs"
-        },
-        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyXUiai5-msDQ": {
-          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyXUiai5-msDQ",
-          "name": "Driveway"
-        },
-        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SzQmdHoqfPVMw": {
-          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SzQmdHoqfPVMw",
-          "name": "Entryway"
-        },
-        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SxU7nWo3AKH4Q": {
-          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SxU7nWo3AKH4Q",
-          "name": "Family Room"
-        },
-        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SwLngiMnbwlUg": {
-          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SwLngiMnbwlUg",
-          "name": "Front Door"
-        },
-        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Sxc2IOyzaeNcA": {
-          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Sxc2IOyzaeNcA",
-          "name": "Front Yard"
-        },
-        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Szvu7J0NTcgAw": {
-          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Szvu7J0NTcgAw",
-          "name": "Garage"
-        },
-        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Szkd2bwaaGPzA": {
-          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Szkd2bwaaGPzA",
-          "name": "Guest House"
-        },
-        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyMAONh-5eing": {
-          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyMAONh-5eing",
-          "name": "Guest Room"
-        },
-        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyEundrCazZjA": {
-          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyEundrCazZjA",
-          "name": "Hallway"
-        },
-        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyC4cxMzF26Tg": {
-          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyC4cxMzF26Tg",
-          "name": "Kids Room"
-        },
-        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyKQ8lXExboSw": {
-          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyKQ8lXExboSw",
-          "name": "Kitchen"
-        },
         "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyRq5RNksxcXg": {
           "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyRq5RNksxcXg",
           "name": "Living Room"
         },
-        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyxLwkA-3JUzA": {
-          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SyxLwkA-3JUzA",
-          "name": "Master Bedroom"
-        },
         "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SwD2fkFCnicqg": {
           "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SwD2fkFCnicqg",
           "name": "Office"
-        },
-        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Sy0GhrTfb_VOw": {
-          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Sy0GhrTfb_VOw",
-          "name": "Outside"
-        },
-        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Sxdi4i5Tb6tMg": {
-          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Sxdi4i5Tb6tMg",
-          "name": "Patio"
-        },
-        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Sx8zYxBWbsu_g": {
-          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Sx8zYxBWbsu_g",
-          "name": "Shed"
-        },
-        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SzgmJYWriG0Ag": {
-          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6SzgmJYWriG0Ag",
-          "name": "Side Door"
-        },
-        "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Sza7xqn7BUFiA": {
-          "where_id": "KbOeS7kwwLhnFiLbbX-60DLnUaloXURWwntI8gHF6Sza7xqn7BUFiA",
-          "name": "Upstairs"
         }
       }
     }

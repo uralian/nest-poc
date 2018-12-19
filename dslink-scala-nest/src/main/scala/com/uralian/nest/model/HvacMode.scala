@@ -1,9 +1,12 @@
 package com.uralian.nest.model
 
+/**
+  * HVAC mode.
+  */
 sealed trait HvacMode
 
 /**
-  * HVAC mode.
+  * Available HVAC modes.
   */
 object HvacMode {
 

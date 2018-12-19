@@ -16,7 +16,7 @@ class ThermostatSpec extends AbstractUnitSpec {
   implicit val formats = DefaultFormats + ThermostatSerializer
 
   "ThermostatSerializer" should {
-    "de-serialize thermostat from JSON" in {
+    "de-serialize Thermostat from JSON" in {
       val json = parse(getClass.getResourceAsStream("/devices.json"))
       val thermostats = json \ "devices" \ "thermostats"
       val thermostat = thermostats.extract[Map[String, Thermostat]].head._2

@@ -34,4 +34,19 @@ class NestHttpServiceSpec extends AbstractITSpec {
       service.getThermostat("??????????????????").failed.futureValue mustBe an[IllegalArgumentException]
     }
   }
+
+  "getAllStructures" should {
+    "retrieve all structures" in {
+      whenReady(service.getAllStructures) { struct => struct must not be empty }
+    }
+  }
+
+  "getEnvironment" should {
+    "retrieve all devices and structures" in {
+      whenReady(service.getEnvironment) {env =>
+        env.thermostats must not be empty
+        env.structures must not be empty
+      }
+    }
+  }
 }
