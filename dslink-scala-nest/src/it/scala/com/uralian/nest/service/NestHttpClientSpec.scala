@@ -5,7 +5,6 @@ import com.softwaremill.sttp.json4s._
 import com.uralian.nest.AbstractITSpec
 import com.uralian.util.JsonUtils._
 import org.json4s._
-import org.scalatest.time.{Millis, Seconds, Span}
 
 import scala.concurrent.ExecutionContext.Implicits.global
 
@@ -18,16 +17,13 @@ class NestHttpClientSpec extends AbstractITSpec {
 
   val client = new NestHttpClient(clientConfig)
 
-  implicit val token = accessToken
-
   implicit val serialization = org.json4s.native.Serialization
-
-  implicit val defaultPatience = PatienceConfig(timeout = Span(5, Seconds), interval = Span(250, Millis))
 
   implicit val asJValue: ResponseAs[JValue, Nothing] = asJson[JValue]
 
   "obtainAccessToken" should {
     "fail on more than one use per PIN" in {
+      val pin = rootConfig.getString("nest-cloud.test-account.pin")
       val fResult = for {
         _ <- client.obtainAccessToken(clientId, clientSecret, pin)
         token <- client.obtainAccessToken(clientId, clientSecret, pin)
@@ -40,7 +36,7 @@ class NestHttpClientSpec extends AbstractITSpec {
     "retrieve root API response" in {
       whenReady(client.httpGet[JValue](apiUri)) { all =>
         val at = (all \ "metadata" \ "access_token" asString)
-        at mustBe token.token
+        at mustBe accessToken.token
       }
     }
     "retrieve a response fragment" in {

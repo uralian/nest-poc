@@ -5,7 +5,7 @@ import com.softwaremill.sttp.akkahttp.AkkaHttpBackend
 import com.softwaremill.sttp.json4s._
 import org.json4s.DefaultFormats
 
-import scala.concurrent.ExecutionContext
+import scala.concurrent.{ExecutionContext, Future}
 
 /**
   * HTTP client for accessing Nest API.
@@ -28,10 +28,10 @@ class NestHttpClient(config: NestClientConfig) {
     * @return
     */
   def obtainAccessToken(clientId: String, clientSecret: String, pinCode: String)
-                       (implicit ec: ExecutionContext) = {
+                       (implicit ec: ExecutionContext): Future[AccessToken] = {
 
     implicit val serialization = org.json4s.native.Serialization
-    implicit val formats = DefaultFormats + new AccessTokenSerializer
+    implicit val formats = DefaultFormats + AccessTokenSerializer
 
     val request = sttp.body("client_id" -> clientId, "client_secret" -> clientSecret, "grant_type" -> grantType,
       "code" -> pinCode).response(asJson[AccessToken]).post(accessTokenUri)
@@ -50,7 +50,8 @@ class NestHttpClient(config: NestClientConfig) {
     * @tparam T
     * @return
     */
-  def httpGet[T: Manifest](uri: Uri)(implicit at: AccessToken, as: ResponseAs[T, Nothing], ec: ExecutionContext) = {
+  def httpGet[T: Manifest](uri: Uri)
+                          (implicit at: AccessToken, as: ResponseAs[T, Nothing], ec: ExecutionContext): Future[T] = {
     val request = sttp.auth.bearer(at.token).contentType(MediaTypes.Json)
     val response = request.get(uri).response(as).send()
     response map {
@@ -58,4 +59,19 @@ class NestHttpClient(config: NestClientConfig) {
       case Response(Left(bytes), _, _, _, _) => throw new RuntimeException(new String(bytes))
     }
   }
+
+  /**
+    * Sends an HTTP GET request to a Nest API endpoint. The endpoint is constructed by concatenating the base API URL
+    * followed by "/" and then the 'query' parameter.
+    *
+    * @param query
+    * @param at
+    * @param as
+    * @param ec
+    * @tparam T
+    * @return
+    */
+  def httpGet[T: Manifest](query: String)
+                          (implicit at: AccessToken, as: ResponseAs[T, Nothing], ec: ExecutionContext): Future[T] =
+    httpGet(uri"${config.apiUrl}/$query")
 }

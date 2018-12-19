@@ -13,7 +13,7 @@ import scala.concurrent.duration._
   */
 class AccessTokenSpec extends AbstractUnitSpec {
 
-  implicit val formats = DefaultFormats + new AccessTokenSerializer
+  implicit val formats = DefaultFormats + AccessTokenSerializer
 
   "AccessTokenSerializer" should {
     "serialize token into JSON" in {

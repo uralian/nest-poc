@@ -17,7 +17,7 @@ case class AccessToken(token: String, expiresIn: Duration)
 /**
   * JSON serializer for AccessToken.
   */
-class AccessTokenSerializer extends CustomSerializer[AccessToken](_ =>
+object AccessTokenSerializer extends CustomSerializer[AccessToken](_ =>
   ( {
     case json => AccessToken(json \ "access_token" asString, (json \ "expires_in" asLong) seconds)
   }, {

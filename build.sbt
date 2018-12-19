@@ -32,6 +32,7 @@ lazy val nest_dslink = (project in file("dslink-scala-nest"))
       "com.softwaremill.sttp" %% "akka-http-backend" % "1.5.1",
       "com.typesafe.akka" %% "akka-stream" % "2.5.11",
       "org.json4s" %% "json4s-native" % "3.6.2",
+      "org.typelevel"  %% "squants"  % "1.4.0",
       "com.uralian" %% "sdk-dslink-scala" % "0.6.1"
     )
   )
