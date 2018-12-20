@@ -27,6 +27,8 @@ object NodeFactory {
 
     createValueNode(node, "hvacMode", "HVAC Mode", pct.hvacMode)
 
+    createValueNode(node, "hvacState", "HVAC State", pct.hvacState)
+
     createValueNode(node, "humidity", "Humidity", pct.humidity, Some("%"))
 
     createValueNode(node, "usingEmergencyHeat", "Emergency Heat On", pct.usingEmergencyHeat)

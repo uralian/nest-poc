@@ -26,7 +26,7 @@ object HvacMode {
     * @param name
     * @return
     */
-  def forName(name: String) = name.toLowerCase match {
+  def forName(name: String): HvacMode = name.toLowerCase match {
     case "heat"      => Heat
     case "cool"      => Cool
     case "heat-cool" => Heat_Cool

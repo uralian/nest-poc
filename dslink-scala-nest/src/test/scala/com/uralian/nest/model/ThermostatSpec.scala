@@ -33,6 +33,7 @@ class ThermostatSpec extends AbstractUnitSpec {
         canHeat = true,
         canCool = true,
         hvacMode = HvacMode.Heat,
+        hvacState = HvacState.Off,
         targetTemperature = 68.F,
         targetTemperatureHigh = 79.F,
         targetTemperatureLow = 66.F,
