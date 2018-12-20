@@ -40,7 +40,7 @@
 		},
 		"handler_class":{
 			"type":"string",
-			"default":"com.uralian.nest.DummyDSLinkHandler"
+			"default":"com.uralian.nest.dsa.DummyDSLinkHandler"
 		}		
 	}
 }
