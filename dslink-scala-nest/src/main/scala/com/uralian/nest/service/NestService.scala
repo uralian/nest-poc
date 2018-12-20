@@ -1,5 +1,6 @@
 package com.uralian.nest.service
 
+import com.softwaremill.sttp.ResponseAs
 import com.uralian.nest.model.{Environment, Structure, Thermostat}
 
 import scala.concurrent.{ExecutionContext, Future}
@@ -45,4 +46,19 @@ trait NestService {
     * @return
     */
   def getEnvironment(implicit token: AccessToken, ec: ExecutionContext): Future[Environment]
+
+  /**
+    * Reads a single thermostat value specified by its name. Eg. "humidity" or "ambient_temperature_c".
+    *
+    * @param deviceId
+    * @param name
+    * @param token
+    * @param as
+    * @param ec
+    * @tparam T
+    * @return
+    */
+  def readThermostatValue[T: Manifest](deviceId: String, name: String)(implicit token: AccessToken,
+                                                                       as: ResponseAs[T, Nothing],
+                                                                       ec: ExecutionContext): Future[T]
 }

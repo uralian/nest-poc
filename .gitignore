@@ -1,10 +1,14 @@
 logs
 target
 local.*
-/.key
 /.idea
 /.idea_modules
 /.classpath
 /.project
 /.settings
 /RUNNING_PID
+
+# DSA specific
+.key
+nodes.json
+nodes.json.bak
