@@ -3,6 +3,7 @@ package com.uralian.nest.dsa
 import com.uralian.dsa._
 import com.uralian.nest.model.Thermostat
 import org.dsa.iot.dslink.node.Node
+import squants.thermal.{Temperature, TemperatureScale}
 
 /**
   * Factory for DSA nodes.
@@ -39,31 +40,23 @@ object NodeFactory {
 
     createValueNode(node, "canCool", "Can Cool", pct.canCool)
 
-    createValueNode(node, "targetTemperature", "Target Temperature",
-      pct.targetTemperature.value, Some(pct.targetTemperature.unit.symbol))
+    createTemperatureNode(node, "targetTemperature", "Target Temperature", pct.targetTemperature, pct.temperatureScale)
 
-    createValueNode(node, "targetTemperatureHigh", "Target Temperature High",
-      pct.targetTemperatureHigh.value, Some(pct.targetTemperatureHigh.unit.symbol))
+    createTemperatureNode(node, "targetTemperatureHigh", "Target Temperature High", pct.targetTemperatureHigh, pct.temperatureScale)
 
-    createValueNode(node, "targetTemperatureLow", "Target Temperature Low",
-      pct.targetTemperatureLow.value, Some(pct.targetTemperatureLow.unit.symbol))
+    createTemperatureNode(node, "targetTemperatureLow", "Target Temperature Low", pct.targetTemperatureLow, pct.temperatureScale)
 
-    createValueNode(node, "ambientTemperature", "Ambient Temperature",
-      pct.ambientTemperature.value, Some(pct.ambientTemperature.unit.symbol))
+    createTemperatureNode(node, "ambientTemperature", "Ambient Temperature", pct.ambientTemperature, pct.temperatureScale)
 
-    createValueNode(node, "awayTemperatureHigh", "Away Temperature High",
-      pct.awayTemperatureHigh.value, Some(pct.awayTemperatureHigh.unit.symbol))
+    createTemperatureNode(node, "awayTemperatureHigh", "Away Temperature High", pct.awayTemperatureHigh, pct.temperatureScale)
 
-    createValueNode(node, "awayTemperatureLow", "Away Temperature Low",
-      pct.awayTemperatureLow.value, Some(pct.awayTemperatureLow.unit.symbol))
+    createTemperatureNode(node, "awayTemperatureLow", "Away Temperature Low", pct.awayTemperatureLow, pct.temperatureScale)
 
     createValueNode(node, "locked", "Locked", pct.locked)
 
-    createValueNode(node, "lockedTemperatureMin", "Locked Temperature Min",
-      pct.lockedTemperatureMin.value, Some(pct.lockedTemperatureMin.unit.symbol))
+    createTemperatureNode(node, "lockedTemperatureMin", "Locked Temperature Min", pct.lockedTemperatureMin, pct.temperatureScale)
 
-    createValueNode(node, "lockedTemperatureMax", "Locked Temperature Max",
-      pct.lockedTemperatureMax.value, Some(pct.lockedTemperatureMax.unit.symbol))
+    createTemperatureNode(node, "lockedTemperatureMax", "Locked Temperature Max", pct.lockedTemperatureMax, pct.temperatureScale)
 
     node
   }
@@ -81,4 +74,20 @@ object NodeFactory {
   def createValueNode(parent: Node, name: String, displayName: String, value: Any, unit: Option[String] = None) =
     parent.createChild(name, null).display(displayName).valueType(anyToValue(value).getType)
       .attributes("unit" -> unit.getOrElse("")).value(value).build()
+
+  /**
+    * Creates a temperature value node, adjusting its value to the specified scale.
+    *
+    * @param parent
+    * @param name
+    * @param displayName
+    * @param temperature
+    * @param scale
+    * @return
+    */
+  def createTemperatureNode(parent: Node, name: String, displayName: String,
+                            temperature: Temperature, scale: TemperatureScale) = {
+    val scaled = temperature.in(scale)
+    createValueNode(parent, name, displayName, scaled.value, Some(scaled.unit.symbol))
+  }
 }
