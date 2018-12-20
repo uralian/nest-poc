@@ -74,4 +74,22 @@ class NestHttpService(client: NestHttpClient) extends NestService {
     */
   def getEnvironment(implicit token: AccessToken, ec: ExecutionContext): Future[Environment] =
     client.httpGet[Environment]("")
+
+  /**
+    * Reads a single thermostat value specified by its name. Eg. "humidity" or "ambient_temperature_c".
+    *
+    * @param deviceId
+    * @param name
+    * @param token
+    * @param as
+    * @param ec
+    * @tparam T
+    * @return
+    */
+  def readThermostatValue[T: Manifest](deviceId: String, name: String)(implicit token: AccessToken,
+                                                                       as: ResponseAs[T, Nothing],
+                                                                       ec: ExecutionContext): Future[T] =
+    client.httpGet[T](s"devices/thermostats/$deviceId/$name").recover {
+      case NonFatal(e) => throw new IllegalArgumentException(s"Error retrieving devices/thermostats/$deviceId/$name", e)
+    }
 }
