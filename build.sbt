@@ -15,7 +15,7 @@ scalacOptions in ThisBuild ++= Seq(
 )
 
 // scoverage options
-coverageMinimum in ThisBuild := 80
+coverageMinimum in ThisBuild := 50
 coverageFailOnMinimum in ThisBuild := true
 
 lazy val root = (project in file("."))
@@ -33,7 +33,8 @@ lazy val nest_dslink = (project in file("dslink-scala-nest"))
       "com.typesafe.akka" %% "akka-stream" % "2.5.11",
       "org.json4s" %% "json4s-native" % "3.6.2",
       "org.typelevel"  %% "squants"  % "1.4.0",
-      "com.uralian" %% "sdk-dslink-scala" % "0.6.1"
+      "com.uralian" %% "sdk-dslink-scala" % "0.6.1",
+      "com.typesafe.akka" %% "akka-stream-kafka" % "1.0-RC1"
     )
   )
 
@@ -51,3 +52,5 @@ lazy val itDependencies = Seq(
   "org.scalacheck"        %% "scalacheck"          % "1.14.0"    % IntegrationTest,
   "org.mockito"            % "mockito-core"        % "2.23.4"    % IntegrationTest
 )
+
+//mainClass in (Compile, run) := Some("com.uralian.nest.dsa.Main")

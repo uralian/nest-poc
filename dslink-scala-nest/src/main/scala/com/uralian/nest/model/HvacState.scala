@@ -23,7 +23,9 @@ object HvacState {
     * @return
     */
   def forName(name: String): HvacState = name.toLowerCase match {
+    case "heating" => Heat
     case "heat" => Heat
+    case "cooling" => Cool
     case "cool" => Cool
     case "off"  => Off
   }

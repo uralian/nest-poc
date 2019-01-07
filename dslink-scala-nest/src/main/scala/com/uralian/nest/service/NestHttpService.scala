@@ -1,11 +1,21 @@
 package com.uralian.nest.service
 
+import akka.{Done, NotUsed}
+import akka.actor.ActorSystem
+import akka.stream.ActorMaterializer
+import akka.stream.scaladsl.{Flow, Framing, Source}
+import akka.util.ByteString
 import com.softwaremill.sttp.ResponseAs
 import com.softwaremill.sttp.json4s.asJson
+import com.uralian.nest.dsa.Main.getClass
 import com.uralian.nest.model._
+import com.uralian.nest.streaming.StreamSink
+import org.json4s.native.JsonMethods._
 import org.json4s.{DefaultFormats, JValue, _}
+import org.slf4j.LoggerFactory
 
 import scala.concurrent.{ExecutionContext, Future}
+import scala.util.{Failure, Success}
 import scala.util.control.NonFatal
 
 /**
@@ -16,7 +26,7 @@ import scala.util.control.NonFatal
 class NestHttpService(client: NestHttpClient) extends NestService {
 
   implicit val formats = DefaultFormats +
-    ThermostatSerializer + StructureSerializer + WhereSerializer + EnvironmentSerializer
+    ThermostatSerializer + StructureSerializer + WhereSerializer + EnvironmentSerializer + StreamDataSerializer
 
   implicit val serialization = org.json4s.native.Serialization
 
@@ -92,4 +102,20 @@ class NestHttpService(client: NestHttpClient) extends NestService {
     client.httpGet[T](s"devices/thermostats/$deviceId/$name").recover {
       case NonFatal(e) => throw new IllegalArgumentException(s"Error retrieving devices/thermostats/$deviceId/$name", e)
     }
+
+  val log = LoggerFactory.getLogger(getClass)
+
+
+  def readThermostatStream[T](sink: StreamSink[T])(implicit token: AccessToken, ec: ExecutionContext,
+                                                   system: ActorSystem): Future[Done] = {
+    implicit val materializer = ActorMaterializer()
+    log.info("entering readThermostatStream")
+
+    for {
+      source <- client.httpStream()
+      result <- sink.sink(source)
+    } yield {
+      result
+    }
+  }
 }

@@ -1,9 +1,13 @@
 package com.uralian.nest.service
 
+import akka.NotUsed
+import akka.stream.scaladsl.Source
+import akka.util.ByteString
 import com.softwaremill.sttp._
 import com.softwaremill.sttp.akkahttp.AkkaHttpBackend
 import com.softwaremill.sttp.json4s._
 import org.json4s.DefaultFormats
+import org.slf4j.LoggerFactory
 
 import scala.concurrent.{ExecutionContext, Future}
 
@@ -74,4 +78,29 @@ class NestHttpClient(config: NestClientConfig) {
   def httpGet[T: Manifest](query: String)
                           (implicit at: AccessToken, as: ResponseAs[T, Nothing], ec: ExecutionContext): Future[T] =
     httpGet(uri"${config.apiUrl}/$query")
+
+  val log = LoggerFactory.getLogger(getClass)
+
+  /**
+    *
+    * @param at
+    * @param ec
+    * @return
+    */
+  def httpStream()(implicit at: AccessToken, ec: ExecutionContext): Future[Source[ByteString, NotUsed]] = {
+
+    val request = sttp.auth.bearer(at.token).header("Accept", "text/event-stream")
+    log.info(s"sending ${at.token}")
+    val response = request.get(uri"${config.apiUrl}/devices/thermostats/").response(asStream[Source[ByteString, NotUsed]]).send()
+    response map {
+      case Response(Right(body), _, _, _, _) => {
+
+        body
+      }
+      case Response(Left(bytes), _, _, _, _) => {
+        log.error(new String(bytes))
+        throw new RuntimeException(new String(bytes))
+      }
+    }
+  }
 }

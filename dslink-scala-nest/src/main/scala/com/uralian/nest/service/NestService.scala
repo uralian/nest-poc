@@ -1,7 +1,10 @@
 package com.uralian.nest.service
 
+import akka.Done
+import akka.actor.ActorSystem
 import com.softwaremill.sttp.ResponseAs
 import com.uralian.nest.model.{Environment, Structure, Thermostat}
+import com.uralian.nest.streaming.StreamSink
 
 import scala.concurrent.{ExecutionContext, Future}
 
@@ -61,4 +64,12 @@ trait NestService {
   def readThermostatValue[T: Manifest](deviceId: String, name: String)(implicit token: AccessToken,
                                                                        as: ResponseAs[T, Nothing],
                                                                        ec: ExecutionContext): Future[T]
+
+  /**
+    * Reads stream of data and pushes to sink
+    *
+    * @param sink
+    */
+  def readThermostatStream[T](sink: StreamSink[T])(implicit token: AccessToken, ec: ExecutionContext,
+                                                   system: ActorSystem): Future[Done]
 }
