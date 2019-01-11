@@ -1,8 +1,9 @@
 package com.uralian.nest.model
 
 import com.uralian.util.JsonUtils._
-import org.json4s.CustomSerializer
-import org.json4s.JsonAST.JNull
+import org.json4s.{CustomSerializer, DefaultFormats, Extraction}
+import org.json4s.JsonAST._
+import org.json4s.JsonDSL._
 
 /**
   *
@@ -21,5 +22,10 @@ object StreamDataSerializer extends CustomSerializer[StreamData](implicit format
       thermostats = (json \ "data").extract[Map[String, Thermostat]]
     )
   }, {
-    case _: StreamData => JNull
+    case a: StreamData => {
+      implicit val formats = DefaultFormats + ThermostatSerializer
+      ("path" -> a.path) ~
+        ("thermostats" -> JObject(a.thermostats.map(tr => JField(tr._1, Extraction.decompose(tr._2))).toList)) ~
+        ("valid" -> a.valid)
+    }
   }))

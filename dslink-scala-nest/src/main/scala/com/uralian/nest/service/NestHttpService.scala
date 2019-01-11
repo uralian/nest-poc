@@ -38,6 +38,7 @@ class NestHttpService(client: NestHttpClient) extends NestService {
 
   implicit val asEnvironment: ResponseAs[Environment, Nothing] = asJson[Environment]
 
+
   /**
     * Returns all thermostats associated with the specified access token.
     *
@@ -103,13 +104,19 @@ class NestHttpService(client: NestHttpClient) extends NestService {
       case NonFatal(e) => throw new IllegalArgumentException(s"Error retrieving devices/thermostats/$deviceId/$name", e)
     }
 
-  val log = LoggerFactory.getLogger(getClass)
-
-
+  /**
+    * Read a stream of data and send it to sink
+    *
+    * @param sink
+    * @param token
+    * @param ec
+    * @param system
+    * @tparam T
+    * @return
+    */
   def readThermostatStream[T](sink: StreamSink[T])(implicit token: AccessToken, ec: ExecutionContext,
                                                    system: ActorSystem): Future[Done] = {
     implicit val materializer = ActorMaterializer()
-    log.info("entering readThermostatStream")
 
     for {
       source <- client.httpStream()

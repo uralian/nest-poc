@@ -4,7 +4,8 @@ import java.util.Locale
 
 import com.uralian.util.JsonUtils._
 import org.json4s.CustomSerializer
-import org.json4s.JsonAST.JNull
+import org.json4s.JsonAST._
+import org.json4s.JsonDSL._
 import squants.thermal.TemperatureConversions._
 import squants.thermal.{Celsius, Fahrenheit, Temperature, TemperatureScale}
 
@@ -97,6 +98,34 @@ object ThermostatSerializer extends CustomSerializer[Thermostat](_ =>
       whereName = json \ "where_name" asString,
       structureId = json \ "structure_id" asString)
   }, {
-    case _: Thermostat => JNull
+    case t: Thermostat =>
+      ("device_id" -> t.deviceId) ~
+        ("name" -> t.name) ~
+        ("label" -> t.label) ~
+        ("name_long" -> t.nameLong) ~
+        ("humidity" -> t.humidity) ~
+        ("locale" -> t.locale.toLanguageTag) ~
+        ("temperature_scale" -> t.temperatureScale.symbol.toLowerCase()) ~
+        ("is_using_emergency_heat" -> t.usingEmergencyHeat) ~
+        ("has_fan" -> t.hasFan) ~
+        ("can_heat" -> t.canHeat) ~
+        ("can_cool" -> t.canCool) ~
+        ("hvac_mode" -> t.hvacMode.toString) ~
+        ("hvac_state" -> t.hvacState.toString) ~
+        ("target_temperature_f" -> t.targetTemperature.toFahrenheitDegrees) ~
+        ("target_temperature_high_f" -> t.targetTemperatureHigh.toFahrenheitDegrees) ~
+        ("target_temperature_low_f" -> t.targetTemperatureLow.toFahrenheitDegrees) ~
+        ("ambient_temperature_f" -> t.ambientTemperature.toFahrenheitDegrees) ~
+        ("away_temperature_high_f" -> t.awayTemperatureHigh.toFahrenheitDegrees) ~
+        ("away_temperature_low_f" -> t.awayTemperatureLow.toFahrenheitDegrees) ~
+        ("is_locked" -> t.locked) ~
+        ("locked_temp_min_f" -> t.lockedTemperatureMin.toFahrenheitDegrees) ~
+        ("locked_temp_max_f" -> t.lockedTemperatureMax.toFahrenheitDegrees) ~
+        ("where_id" -> t.whereId) ~
+        ("where_name" -> t.whereName) ~
+        ("structure_id" -> t.structureId)
+
+
+
   })
 )

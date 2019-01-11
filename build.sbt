@@ -15,7 +15,7 @@ scalacOptions in ThisBuild ++= Seq(
 )
 
 // scoverage options
-coverageMinimum in ThisBuild := 50
+coverageMinimum in ThisBuild := 80
 coverageFailOnMinimum in ThisBuild := true
 
 lazy val root = (project in file("."))
