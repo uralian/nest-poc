@@ -9,7 +9,7 @@ import com.softwaremill.sttp.ResponseAs
 import com.softwaremill.sttp.json4s.asJson
 import com.uralian.nest.dsa.Main.getClass
 import com.uralian.nest.model._
-import com.uralian.nest.streaming.StreamSink
+import com.uralian.nest.streaming.{StreamSink, ThermostatStreaming}
 import org.json4s.native.JsonMethods._
 import org.json4s.{DefaultFormats, JValue, _}
 import org.slf4j.LoggerFactory
@@ -26,7 +26,7 @@ import scala.util.control.NonFatal
 class NestHttpService(client: NestHttpClient) extends NestService {
 
   implicit val formats = DefaultFormats +
-    ThermostatSerializer + StructureSerializer + WhereSerializer + EnvironmentSerializer + StreamDataSerializer
+    ThermostatSerializer + StructureSerializer + WhereSerializer + EnvironmentSerializer + StreamThermostatDataSerializer
 
   implicit val serialization = org.json4s.native.Serialization
 
@@ -107,22 +107,21 @@ class NestHttpService(client: NestHttpClient) extends NestService {
   /**
     * Read a stream of data and send it to sink
     *
-    * @param sink
     * @param token
     * @param ec
     * @param system
     * @tparam T
     * @return
     */
-  def readThermostatStream[T](sink: StreamSink[T])(implicit token: AccessToken, ec: ExecutionContext,
-                                                   system: ActorSystem): Future[Done] = {
+  def readThermostatStream[T]()(implicit token: AccessToken, ec: ExecutionContext,
+                                system: ActorSystem): Future[Source[StreamThermostatData, Any]] = {
     implicit val materializer = ActorMaterializer()
-
+    implicit val dataSerializer = ThermostatStreaming.dataSerializer
+    val uri = "/devices/thermostats/"
     for {
-      source <- client.httpStream()
-      result <- sink.sink(source)
+      source <- client.httpGetStream[StreamThermostatData]("devices/thermostats/")
     } yield {
-      result
+      source
     }
   }
 }

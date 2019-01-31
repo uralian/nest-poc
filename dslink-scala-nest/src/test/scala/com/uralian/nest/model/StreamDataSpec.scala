@@ -10,12 +10,12 @@ import squants.thermal.TemperatureConversions._
 
 class StreamDataSpec extends AbstractUnitSpec {
 
-  implicit val formats = DefaultFormats + ThermostatSerializer + StreamDataSerializer
+  implicit val formats = DefaultFormats + ThermostatSerializer + StreamThermostatDataSerializer
 
   "ThermostatSerializer" should {
     "de-serialize Thermostat from JSON" in {
       val raw = parse(getClass.getResourceAsStream("/stream.json"))
-      val json = parse(getClass.getResourceAsStream("/stream.json")).extract[StreamData]
+      val json = parse(getClass.getResourceAsStream("/stream.json")).extract[StreamThermostatData]
       val thermostat = json.thermostats.head._2
       thermostat mustBe Thermostat(
         deviceId = "j5mQopvmZ_Nygt4_ld0adEsl6khKs_eO",

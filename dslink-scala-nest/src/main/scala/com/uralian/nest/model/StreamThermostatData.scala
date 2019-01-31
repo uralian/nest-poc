@@ -9,20 +9,21 @@ import org.json4s.JsonDSL._
   *
   * @param path
   * @param thermostats
+  *
   */
-case class StreamData(path: String, thermostats: Map[String, Thermostat], valid: Option[Boolean] = Some(true))
+case class StreamThermostatData(path: String, thermostats: Map[String, Thermostat], valid: Option[Boolean] = Some(true))
 
 /**
   * JSON serializer for Environment instances.
   */
-object StreamDataSerializer extends CustomSerializer[StreamData](implicit formats =>
+object StreamThermostatDataSerializer extends CustomSerializer[StreamThermostatData](implicit formats =>
   ( {
-    case json => StreamData(
+    case json => StreamThermostatData(
       path = json \ "path"  asString,
       thermostats = (json \ "data").extract[Map[String, Thermostat]]
     )
   }, {
-    case a: StreamData => {
+    case a: StreamThermostatData => {
       implicit val formats = DefaultFormats + ThermostatSerializer
       ("path" -> a.path) ~
         ("thermostats" -> JObject(a.thermostats.map(tr => JField(tr._1, Extraction.decompose(tr._2))).toList)) ~
