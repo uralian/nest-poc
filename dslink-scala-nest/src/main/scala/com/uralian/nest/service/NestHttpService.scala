@@ -1,11 +1,21 @@
 package com.uralian.nest.service
 
+import akka.{Done, NotUsed}
+import akka.actor.ActorSystem
+import akka.stream.ActorMaterializer
+import akka.stream.scaladsl.{Flow, Framing, Source}
+import akka.util.ByteString
 import com.softwaremill.sttp.ResponseAs
 import com.softwaremill.sttp.json4s.asJson
+import com.uralian.nest.dsa.Main.getClass
 import com.uralian.nest.model._
+import com.uralian.nest.streaming.{StreamSink, ThermostatStreaming}
+import org.json4s.native.JsonMethods._
 import org.json4s.{DefaultFormats, JValue, _}
+import org.slf4j.LoggerFactory
 
 import scala.concurrent.{ExecutionContext, Future}
+import scala.util.{Failure, Success}
 import scala.util.control.NonFatal
 
 /**
@@ -16,7 +26,7 @@ import scala.util.control.NonFatal
 class NestHttpService(client: NestHttpClient) extends NestService {
 
   implicit val formats = DefaultFormats +
-    ThermostatSerializer + StructureSerializer + WhereSerializer + EnvironmentSerializer
+    ThermostatSerializer + StructureSerializer + WhereSerializer + EnvironmentSerializer + StreamThermostatDataSerializer
 
   implicit val serialization = org.json4s.native.Serialization
 
@@ -27,6 +37,7 @@ class NestHttpService(client: NestHttpClient) extends NestService {
   implicit val asStructure: ResponseAs[Structure, Nothing] = asJson[Structure]
 
   implicit val asEnvironment: ResponseAs[Environment, Nothing] = asJson[Environment]
+
 
   /**
     * Returns all thermostats associated with the specified access token.
@@ -92,4 +103,25 @@ class NestHttpService(client: NestHttpClient) extends NestService {
     client.httpGet[T](s"devices/thermostats/$deviceId/$name").recover {
       case NonFatal(e) => throw new IllegalArgumentException(s"Error retrieving devices/thermostats/$deviceId/$name", e)
     }
+
+  /**
+    * Read a stream of data and send it to sink
+    *
+    * @param token
+    * @param ec
+    * @param system
+    * @tparam T
+    * @return
+    */
+  def readThermostatStream[T]()(implicit token: AccessToken, ec: ExecutionContext,
+                                system: ActorSystem): Future[Source[StreamThermostatData, Any]] = {
+    implicit val materializer = ActorMaterializer()
+    implicit val dataSerializer = ThermostatStreaming.dataSerializer
+    val uri = "/devices/thermostats/"
+    for {
+      source <- client.httpGetStream[StreamThermostatData]("devices/thermostats/")
+    } yield {
+      source
+    }
+  }
 }
